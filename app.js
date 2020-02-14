@@ -3,8 +3,8 @@ const express = require('express')
 const router = express.Router();
 const bodyParser = require('body-parser') //Used to parse requests so you can use its info
 const app = express()
-const routes = require("./src/service.js")
-const run = require("./src/serviceTwo.js")
+const routes = require("./src/api.js")
+const run = require("./src/service.js")
 
 const PORT = 8080;
 
@@ -16,12 +16,9 @@ app.get('/getBuyPhoneNumbers', routes.buy_phone_numbers)
 app.get('/getCreateMgService', routes.create_mg_service)
 app.get('/getAddPhoneNumbersToMgService', routes.add_phone_number_to_mg_service)
 
-
-app.get('/testAvailableNumbers', run.get_phone_numbers)
+app.get('/testAvailableNumbers', routes.get_phone_numbers)
 app.get('/testBuyPhoneNumbers', run.aquire_phone_numbers)
 app.get('/testCreateMgService', run.make_service)
-
-
 
 
 app.listen(PORT, function() {

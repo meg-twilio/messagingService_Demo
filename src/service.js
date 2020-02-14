@@ -26,7 +26,6 @@ const aquire_phone_numbers = () => {
 
 
 module.exports = {
-	get_phone_numbers,
 	aquire_phone_numbers,
 	make_service,
 }

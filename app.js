@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require('express')
-const router = express.Router();
 const bodyParser = require('body-parser') //Used to parse requests so you can use its info
 const app = express()
 const routes = require("./src/api.js")

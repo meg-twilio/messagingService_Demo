@@ -1,6 +1,8 @@
-const api = require('./api.js.js')
-
-
+const twilio = require('twilio')
+const express = require('express');
+const client = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN) 
+const router = require('express').Router()
+const ctrl = require('../controllers');
 
 // Create a messgaing service
 const make_service = () => {
@@ -21,11 +23,4 @@ const aquire_phone_numbers = () => {
 		)
 }
 
-
-
-
-
-module.exports = {
-	aquire_phone_numbers,
-	make_service,
-}
+module.exports = router;

@@ -10,11 +10,13 @@ const PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: false }));// Thus lets express know to use static files
 
 // --------------------- ROUTES --------------------- //
-app.use('/', express.static('./'))
+app.get('/', (request, response) => {
+	response.send('<h1>Welcome to Twilio</h1>');
+});
 
 // API Routes
-app.get('/api', routes.api);
-app.get('/service', routes.service)
+app.use('/api', routes.api);
+app.use('/service', routes.service)
 
 // --------------------- START SERVER --------------------- //
 app.listen(PORT, function() {

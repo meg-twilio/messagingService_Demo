@@ -3,6 +3,7 @@ const client = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
 
 module.exports = {
     show: (request, response) => {
+        // console.log(request.params)
         client.availablePhoneNumbers(request.params.countryCode)
         .local
         .list({ areaCode: request.params.areaCode, limit: request.params.limit })

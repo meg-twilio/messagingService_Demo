@@ -5,10 +5,10 @@ const client = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
 const router = require('express').Router()
 const ctrl = require('../controllers');
 
-// Endpoint => 'api/'
+// Endpoint => '/api'
 
 // API Routes
-router.get('/getPhoneNumbers/:countryCode/:limit/:areaCode', ctrl.phoneNumbers.show);
+router.get('/getPhoneNumbers/countryCode=:countryCode/limit=:limit/areaCode=:areaCode', ctrl.phoneNumbers.show);
 // router.post('/:number', ctrl.phoneNumbers.buyNumber);
 
 

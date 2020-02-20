@@ -1,12 +1,20 @@
 
 const twilio = require('twilio')
+const express = erquire('express');
 const client = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN) 
+const router = require('express').Router()
+const ctrl = require('../controllers');
 
+// Endpoint => 'api/'
+
+// API Routes
+router.post('/:friendlyName', ctrl.)
 
 // Create MG Service
-const create_mg_service = (friendlyName) => {
+const create_mg_service = (friendly_name) => {
 	return client.messaging.services
-                .create({friendlyName})
+				.create({friendlyName: friendly_name})
+				.then(service => console.log(service.sid))
 }
 
 // Search for a phone Number

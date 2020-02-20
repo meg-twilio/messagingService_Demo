@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080;
 
 // --------------------- MIDDLEWARE --------------------- //
 
-app.use(bodyParser.urlencoded({ extended: false}));// Thus lets express know to use static files
+app.use(bodyParser.urlencoded({ extended: false }));// Thus lets express know to use static files
 
 // --------------------- ROUTES --------------------- //
 app.use('/', express.static('./'))

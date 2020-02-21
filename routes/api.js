@@ -1,14 +1,18 @@
 
 const twilio = require('twilio')
-const express = require('express');
-const client = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN) 
 const router = require('express').Router()
 const ctrl = require('../controllers');
 
 // Endpoint => '/api'
 
 // API Routes
-router.get('/getPhoneNumbers/countryCode=:countryCode/limit=:limit/areaCode=:areaCode', ctrl.phoneNumbers.show);
+router.get('/getPhoneNumbers/country_code=:countryCode/limit=:limit/area_code=:areaCode', ctrl.phoneNumbers.show);
+router.post('/buyPhoneNumbers/:num', ctrl.phoneNumbers.buyPhoneNumber);
+router.post('/attachNumToMS/:mg_sid/:pn_sid', ctrl.phoneNumbers.attachNumToMS);
+router.post('/create_mg_service/:friendlyName', ctrl.msgService.createMgService);
+
+
+
 // router.post('/:number', ctrl.phoneNumbers.buyNumber);
 
 

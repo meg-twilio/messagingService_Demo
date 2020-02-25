@@ -29,7 +29,16 @@ module.exports = {
             })
             .phoneNumbers
             .create({phoneNumberSid: request.params.pn_sid})
-            response.json({ status: 200, message: `Phone Number ${pn_sid} linked successfully to Messaging Service ${mg_sid}` })       })
-                
-    }   
+            response.json({ status: 200, message: `Phone Number ${pn_sid} linked successfully to Messaging Service ${mg_sid}` })       })       
+    },
+    call: (request, response) => {
+        console.log(request.params)
+        client.calls.create({
+            twiml: <Response><Say voice="alice">Ahoy! Twilio is calling you!</Say></Response>,
+            to: '+19045371699',
+            from: '+9046839073'
+        })
+        .then(call => console.log(call.sid))
+        return response.json({ status: 200, message: `A phone call was made Successfully.` })
+    }
 }

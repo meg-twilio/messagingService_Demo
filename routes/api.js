@@ -10,7 +10,7 @@ router.get('/getPhoneNumbers/country_code=:countryCode/limit=:limit/area_code=:a
 router.post('/buyPhoneNumbers/:num', ctrl.phoneNumbers.buyPhoneNumber);
 router.post('/attachNumToMS/:mg_sid/:pn_sid', ctrl.phoneNumbers.attachNumToMS);
 router.post('/create_mg_service/:friendlyName', ctrl.msgService.createMgService);
-
+router.post('/call', ctrl.phoneNumbers.call);
 
 
 // router.post('/:number', ctrl.phoneNumbers.buyNumber);

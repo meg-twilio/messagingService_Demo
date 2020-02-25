@@ -1,4 +1,5 @@
 module.exports = {
     api: require('./api'),
-    service: require('./service')
+    service: require('./service'), 
+    voice: require('./voice')  
 };
